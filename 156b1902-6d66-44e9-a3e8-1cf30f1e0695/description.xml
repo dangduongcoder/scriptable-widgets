@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<theme>
+<version><![CDATA[100]]></version>
+<uiVersion>12</uiVersion>
+<author><![CDATA[CYKON]]></author>
+<designer><![CDATA[CYKON]]></designer>
+<title><![CDATA[见面]]></title>
+<description><![CDATA[马上就可以见面啦]]></description>
+<typeTag>theme_tools</typeTag>
+<frame>0</frame>
+<editable>true</editable>
+<customEditLink>false</customEditLink>
+<resourceType>widgets</resourceType>
+<authors>
+<author locale="zh_CN"><![CDATA[CYKON]]></author>
+</authors>
+<designers>
+<designer locale="zh_CN"><![CDATA[CYKON]]></designer>
+</designers>
+<titles>
+<title locale="zh_CN"><![CDATA[见面]]></title>
+</titles>
+<descriptions>
+<description locale="zh_CN"><![CDATA[马上就可以见面啦]]></description>
+</descriptions>
+</theme>

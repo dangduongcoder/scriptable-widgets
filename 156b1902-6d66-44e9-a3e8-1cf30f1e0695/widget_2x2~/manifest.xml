@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Widget extraResources="sw1440:den560:1" frameRate="0" screenWidth="1080" useVariableUpdater="Battery,DateTime.Minute" version="2">
+	<!--欢迎定制锁屏：灵貓 QQ 1876461209  /  Welcome to customize the lock screen: Civet QQ 1876461209-->
+	<!--违规抄袭将依据《中华人民共和国民法典》追究法律责任  /  Illegal plagiarism will be investigated for legal liability in accordance with the Civil Code of the People's Republic of China.-->
+	<ExternalCommands>
+		<Trigger action="init,resume">
+			<VariableCommand name="m1c630b12" type="int" expression="substr(@mEca209cd,7,1)"/>
+			<VariableCommand name="m916b06e7" type="int" expression="substr(@mEca209cd,9,1)"/>
+			<VariableCommand name="m8428369b" type="number" expression="max(#view_width/#mD3cfa0ba,#view_height/#m75775721)"/>
+			<VariableCommand name="mF32f060d" type="number" expression="min(#view_width/#mD3cfa0ba,#view_height/#m75775721)"/>
+			<VariableCommand name="m6a2657b7" type="number" expression="#view_width/#mD3cfa0ba"/>
+			<VariableCommand name="m1d216721" type="number" expression="#view_height/#m75775721"/>
+			<IfCommand ifCondition="eqs(@isPreviewMode,'true')">
+				<Consequent>
+					<FrameRateCommand rate="144"/>
+					<VariableCommand name="m2b05ea2a" type="number" expression="#m2b05ea2a+1"/>
+				</Consequent>
+				<Alternate>
+					<AnimationCommand target="mAcea62da" command="play"/>
+					<VariableCommand name="mBc7e68fd" type="number" expression="#mBc7e68fd+1"/>
+				</Alternate>
+			</IfCommand>
+			<AnimationCommand target="mAcea62da" command="play" condition="eqs(@isPreviewMode,'true') != 1"/>
+		</Trigger>
+		<Trigger action="resume">
+			<VariableCommand name="m82079eb1" type="number" expression="0"/>
+		</Trigger>
+		<Trigger action="pause">
+			<VariableCommand name="m82079eb1" type="number" expression="1"/>
+			<VariableCommand name="mFd230fam" type="number" expression="#mFd230fam+1"/>
+		</Trigger>
+	</ExternalCommands>
+	<VariableBinders>
+		<BroadcastBinder action="android.intent.action.BATTERY_CHANGED">
+			<Variable name="m2ed3ede5" type="int" extra="level"/>
+			<Trigger>
+				<BinderCommand name="m5cc6efb3" command="refresh"/>
+				<AnimationCommand target="mAcea62da" command="play"/>
+			</Trigger>
+		</BroadcastBinder>
+	</VariableBinders>
+	<Var name="m30f28092" type="number" expression="0" const="true"/>
+	<Var name="mC40d8350" type="number" expression="1727712000000" const="true"/>
+	<Var name="m8b3b267f" type="string" expression="ifelse(#mC40d8350 { #time_sys ** #m30f28092 == 0,'已过去','只剩下')"/>
+	<Var name="m88d7a34b" type="string" expression="formatDate('yyyy年MM月dd号',#mC40d8350)"/>
+	<Var name="m4381e39b" type="number" expression="ifelse(#mC40d8350 { #time_sys ** #m30f28092 == 0,diffDate(#time_sys,#mC40d8350,#m30f28092),diffDate(#mC40d8350,#time_sys,#m30f28092))"/>
+	<Var name="mDe319eef" type="number" expression="1"/>
+	<Var name="mE2f4052m" type="number" expression="1" const="true"/>
+	<Var name="mF5012da0" type="string" expression="'#fefcf8'"/>
+	<Var name="m54c36c46" type="string" expression="ifelse(#__darkmode,'#00FF00','#29CCCC')"/>
+	<Var name="mEca209cd" type="string" expression="'widget_2x2'"/>
+	<Var name="isPreviewMode" type="number" expression="eqs(@isPreviewMode,'true')"/>
+	<Var name="m1227d76b" type="number" expression="#hour24"/>
+	<Var name="m8a1abd8d" expression="ifelse(eq(#time_format,1),#hour24,ne(#hour12,0),#hour12,12)"/>
+	<Var name="mD53f4c0f" type="number" expression="int(#m8a1abd8d/10)"/>
+	<Var name="mA2387c99" type="number" expression="int(#m8a1abd8d%10)"/>
+	<Var name="m8e3923c2" type="number" expression="int(#minute/10)"/>
+	<Var name="mF93e1354" type="number" expression="int(#minute%10)"/>
+	<Var name="m8ae9dcdm" type="string[]" expression="''" values="'日','一','二','三','四','五','六','七','八','九','十','十一','十二'"/>
+	<Var name="m9637abb4" type="string[]" expression="''" values="'January','February','March','April','May','June','July','August','September','October','November','December'"/>
+	<Var name="mBae24147" type="string[]" expression="''" values="'Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'"/>
+	<Var name="__view_width_template" type="number[]" values="254,186,440,694,948"/>
+	<Var name="__view_height_template" type="number[]" values="280,160,440,720,1000"/>
+	<Var name="mD3cfa0ba" expression="#__view_width_template[#m1c630b12]" const="true"/>
+	<Var name="m75775721" expression="#__view_height_template[#m916b06e7]" const="true"/>
+	<Var name="m1c630b12" type="int" expression="substr(@mEca209cd,7,1)"/>
+	<Var name="m916b06e7" type="int" expression="substr(@mEca209cd,9,1)"/>
+	<Var name="s" type="number[]" values="max(#view_width/#mD3cfa0ba,#view_height/#m75775721),min(#view_width/#mD3cfa0ba,#view_height/#m75775721),#view_width/(#mD3cfa0ba+6*0),#view_height/(#m75775721+6*0)"/>
+	<Var name="m8428369b" type="number" expression="max(#view_width/#mD3cfa0ba,#view_height/#m75775721)"/>
+	<Var name="mF32f060d" type="number" expression="min(#view_width/#mD3cfa0ba,#view_height/#m75775721)"/>
+	<Var name="m6a2657b7" type="number" expression="#view_width/#mD3cfa0ba"/>
+	<Var name="m1d216721" type="number" expression="#view_height/#m75775721"/>
+	<Var name="m2339d5b1" expression="ifelse(eq(#ampm,1)*eq(#time_format,0),#hour+12,eq(#ampm,0)*eq(#time_format,0)*eq(#hour,12),0,#hour)"/>
+	<Var name="m543ee527" expression="ifelse(eq(#ampm,1)*eq(#time_format,0)*lt(#hour12,12),#hour12+12,eq(#ampm,0)*eq(#time_format,0)*eq(#hour,12),0,#hour24)"/>
+	<Var name="mCd37b49d" expression="ifelse(gt(#m2339d5b1,24),23-#m2339d5b1+12,23-#m2339d5b1)"/>
+	<Var name="mBa30840b" expression="int(23-#m543ee527)"/>
+	<Var name="m245411a8" expression="ifelse(gt(#m543ee527,24),#mBa30840b+12,#mBa30840b)"/>
+	<Var name="mDe874444" expression="ifelse(eq(#time_format,2),#mCd37b49d,#m245411a8)"/>
+	<Var name="mBc863114" expression="ifelse(#lunarDay,int(23-#hour),#mDe874444)"/>
+	<Var name="m79492fbe" expression="ifelse(#__maml_version,int(23-#hour24),#mBc863114)"/>
+	<Var name="m1227d76b" expression="ifelse(#__maml_version,#hour24,int(23-#m79492fbe))"/>
+	<Var name="m84b57b17" expression="int(59-#second)"/>
+	<Var name="m4009c6dc" expression="int(59-#minute)"/>
+	<Var name="m706ac361" expression="ifelse(lt((#day_of_week-1),0),#day_of_week-1,7-abs(#day_of_week-1))"/>
+	<Var name="m520d5730" expression="ifelse(eq(#m706ac361,7),0,#m706ac361)"/>
+	<Var name="mB3ed05d6" type="number" expression="int(#day_of_week-1)"/>
+	<Var name="m5015d64e" type="number" expression="ifelse(eq(#mB3ed05d6,0),5,eq(#mB3ed05d6,6),6,5-#mB3ed05d6)"/>
+	<Var name="m4e1a1146" type="number" expression="#m939b1071"/>
+	<Var name="m3302b524" type="number" expression="int(#m939b1071-#date)"/>
+	<Var name="mCea1b3f2" expression="100-round((#m1227d76b*60+#minute)/1440*100)"/>
+	<Var name="m6f1fed07" expression="100-round(ifelse(eq(#day_of_week,1),1,(#day_of_week-1)/7)*100)"/>
+	<Var name="mBcb1773a" expression="100-round((#date/#m4e1a1146)*100)"/>
+	<Var name="m774b41d5" type="number" expression="round((#mB2d54dc7/#m24dba059)*100)"/>
+	<Var name="m7b282d7m" expression="#hour12*30+#minute/2"/>
+	<Var name="m23bf6361" expression="#minute*6"/>
+	<Var name="mAc022024" expression="#second*6"/>
+	<Var name="mBf72c59m" expression="#year+1"/>
+	<Var name="mD84604a9" expression="eq((#year%4),0)*ne((#year%100),0)+eq((#year%400),0)"/>
+	<Var name="m9ff011b1" expression="(ge(#month,1)*31+(28+#mD84604a9)*ge(#month,2)+ge(#month,3)*31+ge(#month,4)*30+ge(#month,5)*31+ge(#month,6)*30+ge(#month,7)*31+ge(#month,8)*31+ge(#month,9)*30+ge(#month,10)*31+ge(#month,11)*30+ge(#month,12)*31)+(365*#year+int(#year/4)+int(#year/400)-int(#year/100))+#date-1+2"/>
+	<Var name="m96135726" expression="(365*#mBf72c59m+int(#mBf72c59m/4)+int(#mBf72c59m/400)-int(#mBf72c59m/100))+2"/>
+	<Var name="mD6f5adb9" expression="abs(#m96135726-#m9ff011b1)+ifelse(#lunarDay,0,-1)"/>
+	<Var name="mB2d54dc7" expression="ifelse(#__maml_version,#mD6f5adb9,#mA1f29d2f)"/>
+	<Var name="m490fe715" expression="int(#mB2d54dc7/100%10)"/>
+	<Var name="m3e08d783" expression="int(#mB2d54dc7/10%10)"/>
+	<Var name="mA7018639" expression="int(#mB2d54dc7%10)"/>
+	<Var name="m56c6c708" type="number" expression="int(#year+1)"/>
+	<Var name="mD2d8174a" type="number" expression="eq((#year%4),0)*ne((#year%100),0)+eq((#year%400),0)"/>
+	<Var name="m39efac49" type="number" expression="int(#year/4)+int(#year/400)-int(#year/100)"/>
+	<Var name="mD62dc777" type="number" expression="int(365*#year+#m39efac49)"/>
+	<Var name="m8ab0c88c" type="number" expression="ifelse(eq(#month,0),#date+0,eq(#month,1),#date+31,eq(#month,2),#date+59,eq(#month,3),#date+90,eq(#month,4),#date+120,eq(#month,5),#date+151,eq(#month,6),#date+181,eq(#month,7),#date+212,eq(#month,8),#date+243,eq(#month,9),#date+273,eq(#month,10),#date+304,eq(#month,11),#date+334,0)-1+#mD2d8174a*ge(#month,2)"/>
+	<Var name="m48e97041" type="number" expression="1"/>
+	<Var name="mA3decb42" type="number" expression="int(#m48e97041-1)"/>
+	<Var name="m33a44ec4" type="number" expression="1"/>
+	<Var name="m867d8ea7" type="number" expression="eq((#m56c6c708%4),0)*ne((#m56c6c708%100),0)+eq((#m56c6c708%400),0)"/>
+	<Var name="mF42281fd" type="number" expression="ifelse(eq(#mA3decb42,0),#m33a44ec4+0,eq(#mA3decb42,1),#m33a44ec4+31,eq(#mA3decb42,2),#m33a44ec4+59,eq(#mA3decb42,3),#m33a44ec4+90,eq(#mA3decb42,4),#m33a44ec4+120,eq(#mA3decb42,5),#m33a44ec4+151,eq(#mA3decb42,6),#m33a44ec4+181,eq(#mA3decb42,7),#m33a44ec4+212,eq(#mA3decb42,8),#m33a44ec4+243,eq(#mA3decb42,9),#m33a44ec4+273,eq(#mA3decb42,10),#m33a44ec4+304,eq(#mA3decb42,11),#m33a44ec4+334,0)-1+#m867d8ea7*ge(#mA3decb42,2)"/>
+	<Var name="mA885d9c0" type="number" expression="int(#month+1)"/>
+	<Var name="m939b1071" type="number" expression="ifelse(eq(#mA885d9c0,2),int(28+#mD2d8174a),eq(#mA885d9c0,4),30,eq(#mA885d9c0,6),30,eq(#mA885d9c0,9),30,eq(#mA885d9c0,11),30,31)"/>
+	<Var name="mA1f29d2f" type="number" expression="#m24dba059-abs(#mF42281fd-#m8ab0c88c)-1"/>
+	<Var name="m24dba059" type="number" expression="int(365+#mD2d8174a)"/>
+	<Var name="mFfe70bf0" expression="int(sqrt(33)*#mTextSize_Var)"/>
+	<Group w="ceil(#view_width)" h="ceil(#view_height)" layered="true">
+		<Image x="#view_width/2" y="#view_height/2" align="center" alignV="center" w="#view_width" h="#view_height" src="bz.jpg" isBackground="false" scaleType="fill"/>
+		<Group x="(#view_width-#mD3cfa0ba)/2" y="(#view_height-#m75775721)/2" pivotX="#mD3cfa0ba/2" pivotY="#m75775721/2" scale="#s[1]">
+			<Group x="#mD3cfa0ba/2-000" y="#m75775721/2-000">   </Group>
+			<Rectangle x="220" y="140" align="center" alignV="center" w="368" h="212" fillColor="#fef6d1" strokeColor="#ffd5a8" weight="8" cornerRadius="49"/>
+			<Image x="340" y="73" align="center" alignV="center" w="106" h="96" src="assets/vwDu4eic.png"/>
+			<Image x="278" y="274" align="center" alignV="center" w="328" h="328" src="assets/Atl1dpYQ.png"/>
+			<Image x="99" y="302" align="center" alignV="center" w="66" h="72" src="assets/jxCHEoWS.png"/>
+			<Image x="64" y="368" align="center" alignV="center" w="66" h="72" src="assets/ulpPfLOH.png"/>
+			<Text x="73" y="83-#mFfe70bf0" align="left" alignV="center" color="#302E2B" size="33" format="见面%s" paras="@m8b3b267f" fontPath="etc/cjkFonts-Regular.ttf"/>
+			<Text x="73" y="196-#mFfe70bf0" align="left" alignV="center" color="#302E2B" size="33" text="Days" fontPath="etc/cjkFonts-Regular.ttf"/>
+			<ImageNumber x="73" y="140" align="left" alignV="center" src="assets/num.png" number="#m4381e39b"/>
+		</Group>
+		<Rectangle x="0" y="#view_height" align="left" alignV="bottom" w="#view_width" h="1" fillColor="@mF5012da0" visibility="#m82079eb1"/>
+	</Group>
+	<FramerateController name="mAcea62da" initPause="true" loop="false">
+		<ControlPoint time="0" frameRate="144"/>
+		<ControlPoint time="100" frameRate="144"/>
+		<ControlPoint time="101" frameRate="0"/>
+	</FramerateController>
+	<Array count="3" indexName="mE66c3671"> </Array>
+	<Function name="m97dfc310">
+		<IntentCommand action="android.intent.action.MAIN" package="com.android.calendar" class="com.android.calendar.AllInOneActivity"/>
+	</Function>
+	<Button x="0" y="0" w="#view_width" h="#view_height" visibility="!#isPreviewMode ** !#d">
+		<Triggers>
+			<Trigger condition="!#isPreviewMode ** !#d" action="up">
+				<FunctionCommand target="m97dfc310"/>
+			</Trigger>
+		</Triggers>
+	</Button>
+</Widget>
