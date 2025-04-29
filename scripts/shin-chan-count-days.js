@@ -78,11 +78,11 @@ function createWidget() {
   context.opaque = false;
   context.respectScreenScale = true;
 
-  // Vẽ ảnh nền
   context.drawImageInRect(bgImage, new Rect(0, 0, context.size.width, context.size.height));
 
 
   drawImageAt(context, frameImage, 34, 34, 372, 204);
+
 
   const dayStr = days.toString();
   const xPositions = [63, 105, 147, 189];
@@ -98,7 +98,6 @@ function createWidget() {
   drawImageAt(context, starImage, 30, 343, 65, 72);
   drawImageAt(context, starImage, 47, 271, 65, 72);
 
-  // Kết xuất ảnh nền
   let finalImage = context.getImage();
   widget.backgroundImage = finalImage;
 
@@ -116,3 +115,4 @@ async function loadImageFromUrl(url) {
 function drawImageAt(context, image, x, y, w, h) {
   context.drawImageInRect(image, new Rect(x, y, w, h));
 }
+
