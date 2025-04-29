@@ -9,6 +9,7 @@ const dogImageUrl   = `${BASE_URL}widget_2x2~/assets/Atl1dpYQ.png`;
 const starImageUrl  = `${BASE_URL}widget_2x2~/assets/jxCHEoWS.png`;
 const frameImageUrl = `${BASE_URL}widget_2x2%7E/assets/frame-bg.png`;
 const heartImageUrl = `${BASE_URL}widget_2x2%7E/assets/vwDu4eic.png`;
+const daysImageUrl = `${BASE_URL}widget_2x2%7E/assets/Days.png`;
 
 const numberImageUrls = [
   `${BASE_URL}widget_2x2%7E/assets/num_0.png`,
@@ -42,7 +43,7 @@ let dogImage = await loadImageFromUrl(dogImageUrl);
 let starImage = await loadImageFromUrl(starImageUrl);
 let frameImage = await loadImageFromUrl(frameImageUrl);
 let heartImage = await loadImageFromUrl(heartImageUrl);
-
+let daysImage = await loadImageFromUrl(daysImageUrl);
 
 // let days = 1000;
 
@@ -90,7 +91,9 @@ function createWidget() {
     drawImageAt(context, numberImages[digit], xPositions[i], 107, 42, 58);
   }
 
+
   drawImageAt(context, heartImage, 300, 18, 106, 95);
+  drawImageAt(context, daysImage, 73, 178, 64, 27);
   drawImageAt(context, dogImage, 112, 113, 328, 327);
   drawImageAt(context, starImage, 30, 343, 65, 72);
   drawImageAt(context, starImage, 47, 271, 65, 72);
