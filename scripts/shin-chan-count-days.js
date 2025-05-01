@@ -3,25 +3,48 @@ const WIDGET_WIDTH = 440;
 const WIDGET_HEIGHT = 440;
 
 
+// const BASE_URL = "https://raw.githubusercontent.com/dangduongcoder/scriptable-widgets/refs/heads/main/156b1902-6d66-44e9-a3e8-1cf30f1e0695/";
+// const bgImageUrl    = `${BASE_URL}widget_2x2~/bz.jpg`;
+// const dogImageUrl   = `${BASE_URL}widget_2x2~/assets/Atl1dpYQ.png`;
+// const starImageUrl  = `${BASE_URL}widget_2x2~/assets/jxCHEoWS.png`;
+// const frameImageUrl = `${BASE_URL}widget_2x2%7E/assets/frame-bg.png`;
+// const heartImageUrl = `${BASE_URL}widget_2x2%7E/assets/vwDu4eic.png`;
+// const daysImageUrl = `${BASE_URL}widget_2x2%7E/assets/Days.png`;
+// const titleImageUrl = `${BASE_URL}widget_2x2%7E/assets/Love%20you.png`;
+
+// const numberImageUrls = [
+//   `${BASE_URL}widget_2x2%7E/assets/num_0.png`,
+//   `${BASE_URL}widget_2x2%7E/assets/num_1.png`,
+//   `${BASE_URL}widget_2x2%7E/assets/num_2.png`,
+//   `${BASE_URL}widget_2x2%7E/assets/num_3.png`,
+//   `${BASE_URL}widget_2x2%7E/assets/num_4.png`,
+//   `${BASE_URL}widget_2x2%7E/assets/num_5.png`,
+//   `${BASE_URL}widget_2x2%7E/assets/num_6.png`,
+//   `${BASE_URL}widget_2x2%7E/assets/num_7.png`,
+//   `${BASE_URL}widget_2x2%7E/assets/num_8.png`,
+//   `${BASE_URL}widget_2x2%7E/assets/num_9.png`,
+// ];
+
 const BASE_URL = "https://raw.githubusercontent.com/dangduongcoder/scriptable-widgets/refs/heads/main/156b1902-6d66-44e9-a3e8-1cf30f1e0695/";
-const bgImageUrl    = `${BASE_URL}widget_2x2~/bz.jpg`;
-const dogImageUrl   = `${BASE_URL}widget_2x2~/assets/Atl1dpYQ.png`;
-const starImageUrl  = `${BASE_URL}widget_2x2~/assets/jxCHEoWS.png`;
-const frameImageUrl = `${BASE_URL}widget_2x2%7E/assets/frame-bg.png`;
-const heartImageUrl = `${BASE_URL}widget_2x2%7E/assets/vwDu4eic.png`;
-const daysImageUrl = `${BASE_URL}widget_2x2%7E/assets/Days.png`;
+const bgImageUrl    = `https://i.ibb.co/C30WnsxZ/bz.jpg`;
+const dogImageUrl   = `https://i.ibb.co/KQgV4bp/Atl1dpYQ.png`;
+const starImageUrl  = `https://i.ibb.co/PZTgt7gD/jxCHEoWS.png`;
+const frameImageUrl = `https://i.ibb.co/9kpKhdVB/frame-bg.png`;
+const heartImageUrl = `https://i.ibb.co/hFSRHhXr/vwDu4eic.png`;
+const daysImageUrl = `https://i.ibb.co/MyFzZffh/Days.png`;
+const titleImageUrl = `https://i.ibb.co/WWxk9HSf/Love-you.png`;
 
 const numberImageUrls = [
-  `${BASE_URL}widget_2x2%7E/assets/num_0.png`,
-  `${BASE_URL}widget_2x2%7E/assets/num_1.png`,
-  `${BASE_URL}widget_2x2%7E/assets/num_2.png`,
-  `${BASE_URL}widget_2x2%7E/assets/num_3.png`,
-  `${BASE_URL}widget_2x2%7E/assets/num_4.png`,
-  `${BASE_URL}widget_2x2%7E/assets/num_5.png`,
-  `${BASE_URL}widget_2x2%7E/assets/num_6.png`,
-  `${BASE_URL}widget_2x2%7E/assets/num_7.png`,
-  `${BASE_URL}widget_2x2%7E/assets/num_8.png`,
-  `${BASE_URL}widget_2x2%7E/assets/num_9.png`,
+  `https://i.ibb.co/4wHwjCxm/num-0.png`,
+  `https://i.ibb.co/sdW56qyn/num-1.png`,
+  `https://i.ibb.co/nqcqkQy5/num-2.png`,
+  `https://i.ibb.co/bM6hjP7h/num-3.png`,
+  `https://i.ibb.co/3yf8xLmd/num-4.png`,
+  `https://i.ibb.co/kscvGd4c/num-5.png`,
+  `https://i.ibb.co/4ZSVTVDq/num-6.png`,
+  `https://i.ibb.co/HLm45Z0b/num-7.png`,
+  `https://i.ibb.co/YF6th9Fk/num-8.png`,
+  `https://i.ibb.co/n8gBM66T/num-9.png`,
 ];
 
 
@@ -44,7 +67,7 @@ let starImage = await loadImageFromUrl(starImageUrl);
 let frameImage = await loadImageFromUrl(frameImageUrl);
 let heartImage = await loadImageFromUrl(heartImageUrl);
 let daysImage = await loadImageFromUrl(daysImageUrl);
-
+let titleImage = await loadImageFromUrl(titleImageUrl);
 // let days = 1000;
 
 const refreshHours = 1; 
@@ -94,6 +117,7 @@ function createWidget() {
 
   drawImageAt(context, heartImage, 300, 18, 106, 95);
   drawImageAt(context, daysImage, 73, 178, 64, 27);
+  drawImageAt(context, titleImage, 75, 63, 125, 34);
   drawImageAt(context, dogImage, 112, 113, 328, 327);
   drawImageAt(context, starImage, 30, 343, 65, 72);
   drawImageAt(context, starImage, 47, 271, 65, 72);
