@@ -25,26 +25,25 @@ const WIDGET_HEIGHT = 440;
 //   `${BASE_URL}widget_2x2%7E/assets/num_9.png`,
 // ];
 
-const BASE_URL = "https://raw.githubusercontent.com/dangduongcoder/scriptable-widgets/refs/heads/main/156b1902-6d66-44e9-a3e8-1cf30f1e0695/";
-const bgImageUrl    = `https://i.ibb.co/C30WnsxZ/bz.jpg`;
-const dogImageUrl   = `https://i.ibb.co/KQgV4bp/Atl1dpYQ.png`;
-const starImageUrl  = `https://i.ibb.co/PZTgt7gD/jxCHEoWS.png`;
-const frameImageUrl = `https://i.ibb.co/9kpKhdVB/frame-bg.png`;
-const heartImageUrl = `https://i.ibb.co/hFSRHhXr/vwDu4eic.png`;
-const daysImageUrl = `https://i.ibb.co/MyFzZffh/Days.png`;
-const titleImageUrl = `https://i.ibb.co/WWxk9HSf/Love-you.png`;
+const bgImageUrl    = `https://res.cloudinary.com/diejbdl3a/image/upload/v1746066939/bz_s5zqjy.jpg`;
+const dogImageUrl   = `https://res.cloudinary.com/diejbdl3a/image/upload/v1746066674/Atl1dpYQ_jp9pos.png`;
+const starImageUrl  = `https://res.cloudinary.com/diejbdl3a/image/upload/v1746066674/jxCHEoWS_ydsh22.png`;
+const frameImageUrl = `https://res.cloudinary.com/diejbdl3a/image/upload/v1746066674/frame-bg_u3ujac.png`;
+const heartImageUrl = `https://res.cloudinary.com/diejbdl3a/image/upload/v1746066674/vwDu4eic_dji7ic.png`;
+const daysImageUrl = `https://res.cloudinary.com/diejbdl3a/image/upload/v1746066673/Days_vjivuy.png`;
+const titleImageUrl = `https://res.cloudinary.com/diejbdl3a/image/upload/v1746066674/Love_you_jknnby.png`;
 
 const numberImageUrls = [
-  `https://i.ibb.co/4wHwjCxm/num-0.png`,
-  `https://i.ibb.co/sdW56qyn/num-1.png`,
-  `https://i.ibb.co/nqcqkQy5/num-2.png`,
-  `https://i.ibb.co/bM6hjP7h/num-3.png`,
-  `https://i.ibb.co/3yf8xLmd/num-4.png`,
-  `https://i.ibb.co/kscvGd4c/num-5.png`,
-  `https://i.ibb.co/4ZSVTVDq/num-6.png`,
-  `https://i.ibb.co/HLm45Z0b/num-7.png`,
-  `https://i.ibb.co/YF6th9Fk/num-8.png`,
-  `https://i.ibb.co/n8gBM66T/num-9.png`,
+  `https://res.cloudinary.com/diejbdl3a/image/upload/v1746066674/num_0_zzymff.png`,
+  `https://res.cloudinary.com/diejbdl3a/image/upload/v1746066674/num_1_mmkxuq.png`,
+  `https://res.cloudinary.com/diejbdl3a/image/upload/v1746066674/num_2_dbyjy4.png`,
+  `https://res.cloudinary.com/diejbdl3a/image/upload/v1746066675/num_3_f9pezk.png`,
+  `https://res.cloudinary.com/diejbdl3a/image/upload/v1746066675/num_4_ng0wpb.png`,
+  `https://res.cloudinary.com/diejbdl3a/image/upload/v1746066675/num_5_jxvvqa.png`,
+  `https://res.cloudinary.com/diejbdl3a/image/upload/v1746066675/num_6_zomvh7.png`,
+  `https://res.cloudinary.com/diejbdl3a/image/upload/v1746066675/num_7_mpbgqq.png`,
+  `https://res.cloudinary.com/diejbdl3a/image/upload/v1746066675/num_8_yzqeb2.png`,
+  `https://res.cloudinary.com/diejbdl3a/image/upload/v1746066675/num_9_du5alo.png`,
 ];
 
 
