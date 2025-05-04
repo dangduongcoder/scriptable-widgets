@@ -25,7 +25,6 @@ const numberImageUrls = [
   `data:image/png;base64,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`,
 ];
 
-// Tải tất cả ảnh số cùng lúc, loại bỏ phần "data:image/...;base64," trước khi giải mã
 const numberImages = await Promise.all(
   numberImageUrls.map(async url => await loadImageFromUrl(url))
 );
@@ -38,7 +37,7 @@ let heartImage = await loadImageFromUrl(heartImageUrl);
 let daysImage  = await loadImageFromUrl(daysImageUrl);
 let titleImage = await loadImageFromUrl(titleImageUrl);
 
-const refreshHours = 1;
+const refreshHours = 0;
 const nextRefresh = new Date(Date.now() + refreshHours * 60 * 60 * 1000);
 const startDate   = new Date("2023-12-24T00:00:00");
 const now         = new Date();
@@ -54,6 +53,10 @@ if (config.runsInWidget) {
   widget.presentSmall();
 }
 
+
+
+
+
 function createWidget() {
   let widget = new ListWidget();
   widget.setPadding(0, 0, 0, 0);
@@ -64,11 +67,9 @@ function createWidget() {
   context.opaque              = false;
   context.respectScreenScale  = true;
 
-  // vẽ hình nền và khung
   context.drawImageInRect(bgImage, new Rect(0, 0, context.size.width, context.size.height));
   drawImageAt(context, frameImage, 34, 34, 372, 204);
 
-  // vẽ số ngày
   const dayStr    = days.toString();
   const xPositions = [63, 105, 147, 189];
   for (let i = 0; i < dayStr.length; i++) {
@@ -76,7 +77,6 @@ function createWidget() {
     drawImageAt(context, numberImages[digit], xPositions[i], 107, 42, 58);
   }
 
-  // các hình khác
   drawImageAt(context, heartImage, 300, 18, 106, 95);
   drawImageAt(context, daysImage, 73, 178, 64, 27);
   drawImageAt(context, titleImage, 75, 63, 125, 34);
@@ -90,7 +90,6 @@ function createWidget() {
 }
 
 async function loadImageFromUrl(dataUrl) {
-  // nếu có prefix "data:image/...;base64,", cắt bỏ trước dấu phẩy
   const commaIndex  = dataUrl.indexOf(',');
   const b64         = commaIndex >= 0 ? dataUrl.slice(commaIndex + 1) : dataUrl;
   const imageData   = Data.fromBase64String(b64);
